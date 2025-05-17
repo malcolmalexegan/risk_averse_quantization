@@ -1,0 +1,28 @@
+# EXAMPLE
+#simulation:
+#  time_step: 0.01
+#  duration: 10.0
+#  gravity: 9.81
+#  initial_conditions:
+#    position: 0.0
+#    velocity: 5.0
+
+simulation:
+  seed: 42
+  tmax: 10
+  h:
+    option_h: "Power"
+    param_h: 0.1
+  d:
+    name: "SE"
+  data:
+    s: 100
+    mean: 0
+    std: 1
+  CEM:
+    N: 20
+    elite: 5
+    alpha: 0.3
+
+  
+  
