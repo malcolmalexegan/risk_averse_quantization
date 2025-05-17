@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.10.10)  17 MAY 2025 11:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.8.28) (preloaded format=pdflatex 2022.10.10)  17 MAY 2025 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -370,7 +370,7 @@ LaTeX Font Info:    ... okay on input line 55.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 55.
 LaTeX Font Info:    ... okay on input line 55.
 
--- Lines per column: 56 (exact).
+-- Lines per column: 58 (exact).
 
 (C:\Users\malco\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
 ii
@@ -411,7 +411,7 @@ Package epstopdf Info: Source file: <impact_distortion.eps>
 (epstopdf)                    size: 17493 bytes
 (epstopdf)             Command: <miktex-epstopdf --outfile=impact_distortion-ep
 s-converted-to.pdf impact_distortion.eps>
-(epstopdf)             \includegraphics on input line 138.
+(epstopdf)             \includegraphics on input line 141.
 Package epstopdf Info: Output file is already uptodate.
 
 
@@ -421,84 +421,72 @@ DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 File: impact_distortion-eps-converted-to.pdf Graphic file (type pdf)
 <use impact_distortion-eps-converted-to.pdf>
 Package pdftex.def Info: impact_distortion-eps-converted-to.pdf  used on input 
-line 138.
+line 141.
 (pdftex.def)             Requested size: 252.0pt x 188.7302pt.
 [2 <./impact_distortion-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 171--173
+Underfull \hbox (badness 10000) in paragraph at lines 174--176
 \OT1/ptm/m/n/10 for all $\OML/cmm/m/it/10 u \OMS/cmsy/m/n/10 2 \OT1/cmr/m/n/10 
 [0\OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 1\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 . A co
 n-ser-va-tive es-ti-mate of
  []
 
 [3]
-<time_series.png, id=74, 415.5525pt x 312.2064pt>
-File: time_series.png Graphic file (type png)
-<use time_series.png>
-Package pdftex.def Info: time_series.png  used on input line 250.
+<time_series_FIN.png, id=75, 415.5525pt x 312.2064pt>
+File: time_series_FIN.png Graphic file (type png)
+<use time_series_FIN.png>
+Package pdftex.def Info: time_series_FIN.png  used on input line 257.
 (pdftex.def)             Requested size: 252.0pt x 189.32611pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 1430) in paragraph at lines 274--275
+Underfull \hbox (badness 1430) in paragraph at lines 281--282
 []\OT1/ptm/m/n/10 Goal-oriented com-pres-sion re-lies on knowl-edge of an
  []
 
-(paper_v3_1_bit_quantization.bbl)
-
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
-
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
-
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
-
-[4 <./time_series.png>] (paper_v3_1_bit_quantization.aux) ) 
+(paper_v3_1_bit_quantization.bbl) [4 <./time_series_FIN.png>]
+(paper_v3_1_bit_quantization.aux) ) 
 Here is how much of TeX's memory you used:
- 5044 strings out of 475385
- 84588 string characters out of 2776906
- 442029 words of memory out of 3000000
- 26306 multiletter control sequences out of 15000+600000
+ 5041 strings out of 475385
+ 84564 string characters out of 2776906
+ 442925 words of memory out of 3000000
+ 26303 multiletter control sequences out of 15000+600000
  524524 words of font info for 154 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 55i,13n,62p,1211b,526s stack positions out of 10000i,1000n,20000p,200000b,80000s
-{C:/Users/malco/AppD
-ata/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}<C:/Users/malco/AppData/L
-ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/malco/
-AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/User
-s/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb>
-<C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-bx8.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmex10.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi5.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/malco/AppData/Local/Program
-s/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/malco/AppData/Local
-/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/malco/AppDa
-ta/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/m
-alco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
-/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17
-.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmr5.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr6.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmr7.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/malco/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/malco/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/malco/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/malc
-o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-<C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbo
-ls/msbm7.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
-s/utmb8a.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/time
-s/utmbi8a.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
-es/utmr8a.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/tim
-es/utmri8a.pfb>
-Output written on paper_v3_1_bit_quantization.pdf (4 pages, 392485 bytes).
+ 55i,13n,62p,1134b,598s stack positions out of 10000i,1000n,20000p,200000b,80000s
+{C:/Users/malco/AppData/Local/Programs/MiKTe
+X/fonts/enc/dvips/base/8r.enc}<C:/Users/malco/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/malco/AppData/Local/Programs/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/malco/AppData/Local/Pr
+ograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/malco/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/malco/
+AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Use
+rs/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi5.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsf
+onts/cm/cmmi6.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmmi7.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/malco/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/malco/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/malco/App
+Data/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/ma
+lco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/U
+sers/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pf
+b><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmr8.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr9.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/amsfonts/cm/cmsy10.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy7.pfb><C:/Users/malco/AppData/Local/Programs/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/malco/AppData/Local/Programs
+/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/malco/AppData/
+Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm7.pfb><C:/Users/m
+alco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/m
+alco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/
+malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/
+malco/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on paper_v3_1_bit_quantization.pdf (4 pages, 379943 bytes).
 PDF statistics:
  194 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

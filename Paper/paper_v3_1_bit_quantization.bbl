@@ -91,6 +91,10 @@ Z.~Botev \emph{et~al.}, ``The cross-entropy method for optimization,''
 M.~Kersken and P.~Strachan, ``Twin house experiment iea ebc annex 71 validation
   of building energy simulation tools-specifications and dataset,'' 2020.
 
+\bibitem{Hoydis2023sionna}
+J.~Hoydis \emph{et~al.}, ``Sionna {RT}: Differentiable ray tracing for radio
+  propagation modeling,'' in \emph{IEEE Globecom Workshops (GC Wkshps)}, 2023.
+
 \bibitem{Vempaty2014quantizer}
 A.~Vempaty \emph{et~al.}, ``On quantizer design for distributed bayesian
   estimation in sensor networks,'' \emph{IEEE Transactions on Signal

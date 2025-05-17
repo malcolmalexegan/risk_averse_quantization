@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+\documentclass[journal]{IEEEtran}
 
 \usepackage{bm,cite,algorithm,algorithmic,float,amsmath,amssymb}
 
@@ -84,8 +84,7 @@ Goal-oriented quantization can outperform quantizer based on the mean-square err
 % How to account for uncertainty in the distortion function
 In this paper, we propose a method to select a quantizer when there is uncertainty in the distortion measure. While our method can in principle be applied to general low resolution quantizers, we focus on the important case of $1$-bit quantization \cite{Magnani2005optimal}.
 
-We first investigate the impact of uncertainty in the distortion measure in the case of symmetric $1$-bit quantization with Gaussian data. %For two families of mean distortion measures, one of which can also model uncertainty in the data distribution, we numerically study dependence of performance on the choice of quantization level. 
-We observe that uncertainty in the mean distortion measure can lead to significant variations in the choice of quantization level. 
+We first investigate the impact of uncertainty in the distortion measure in the case of symmetric $1$-bit quantization with Gaussian data. For two families of mean distortion measures, one of which can also model uncertainty in the data distribution, we numerically study dependence of performance on the choice of quantization level. We observe that uncertainty in the mean distortion measure can lead to significant variations in the choice of quantization level. 
 
 We then introduce our proposed method. The core idea is that uncertainty in the mean distortion measure can be accounted for by increasing the cost associated to large values of the distortion function. In particular, the probability that distortion exceeds a large value is assigned a larger weight. We show that this modification leads to a risk measure rather than the standard mean distortion measure \cite{Yaari1987dual,Serada2010distortion}. Recently, we have established information-theoretic limits for fixed-length compression with risk measure constraints \cite{Egan2025risk}; however, the design of quantizers with risk measure criteria has not been investigated. 
 
@@ -97,9 +96,13 @@ Quantizer optimization for mean distortion measures is typically solved via Lloy
 
 \subsection{$1$-Bit Quantization}
 
-Scalar- and vector-valued data arises naturally from data sets containing images, time series for speech, or channel coefficients in multiple-antenna communication systems. We therefore consider a data source $P_{\mathbf{X}}$ with data $\mathbf{X} \in \mathbb{R}^d$ with $d \geq 1$. The data source is assumed to be known, either from a physical generative model (e.g., ray-tracing models in wireless communications), or the empirical distribution obtained from a historical data set. 
+Scalar- and vector-valued data arises naturally from data sets containing images, time series for speech, or channel coefficients in multiple-antenna communication systems. We therefore consider a data source $P_{\mathbf{X}}$ with data $\mathbf{X} \in \mathbb{R}^d$ with $d \geq 1$. The data source is assumed to be known, either from a physical generative model (e.g., ray-tracing models in wireless communications \cite{Hoydis2023sionna}), or the empirical distribution obtained from a historical data set (e.g., \cite{Kersken2020}). 
 
-A $1$-bit quantizer of data $\mathbf{X}$ consists of a reproduction set $\mathcal{Y} = \{\mathbf{y}_1,\mathbf{y}_2\} \subset \mathbb{R}^d$, and a quantization function $Q: \mathbb{R}^d \rightarrow \mathcal{Y}$. The quantization function $Q$ maps the data $\mathbf{X}$ to the quantization $\hat{\mathbf{X}} \in \mathcal{Y}$. The quality of a $1$-bit quantizer is typically characterized by the mean distortion, depending on a distortion function $D: \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}_+$; e.g., the square error distortion function $D_{\mathrm{SE}}(\mathbf{x},\hat{\mathbf{x}}) = \|\mathbf{x} - \hat{\mathbf{x}}\|_2^2$. In particular, the performance of a $1$-bit quantizer has the form $\mathcal{E} = \mathbb{E}[D(\mathbf{X},\hat{\mathbf{X}})]$. As the choice of a $1$-bit quantizer depends on the data distribution $P_{\mathbf{X}}$ and the distortion function $D$, an uncertainty in either can lead to poor performance. %For i.i.d. memoryless sources, this a well-developed characterization of the impact of uncertainty in the distortion criterion has been obtained from mismatched rate distortion theory \cite{Kanabar2024mismatched}. 
+A $1$-bit quantizer of data $\mathbf{X}$ consists of a reproduction set $\mathcal{Y} = \{\mathbf{y}_1,\mathbf{y}_2\} \subset \mathbb{R}^d$, and a quantization function $Q: \mathbb{R}^d \rightarrow \mathcal{Y}$. The quantization function $Q$ maps the data $\mathbf{X}$ to the quantization $\hat{\mathbf{X}} \in \mathcal{Y}$. The quality of a $1$-bit quantizer is typically characterized by the mean distortion, depending on a distortion function $D: \mathbb{R}^d \times \mathbb{R}^d \rightarrow \mathbb{R}_+$; e.g., the square error distortion function $D_{\mathrm{SE}}(\mathbf{x},\hat{\mathbf{x}}) = \|\mathbf{x} - \hat{\mathbf{x}}\|_2^2$. In particular, the performance of a $1$-bit quantizer has the form 
+\begin{align}
+	\mathcal{E} = \mathbb{E}[D(\mathbf{X},\hat{\mathbf{X}})].
+\end{align}
+As the choice of a $1$-bit quantizer depends on the data distribution $P_{\mathbf{X}}$ and the distortion function $D$, an uncertainty in either can lead to poor performance. %For i.i.d. memoryless sources, this a well-developed characterization of the impact of uncertainty in the distortion criterion has been obtained from mismatched rate distortion theory \cite{Kanabar2024mismatched}. 
 
 In the sequel, we introduce new criteria for $1$-bit quantizer design that form alternatives to mean distortion criteria and mitigates the impact of uncertainty in $P_{\mathbf{X}}$ and $D$. Before introducing our criteria, we first highlight that uncertainty in $P_{\mathbf{X}}$ can be viewed as uncertainty in $D$, and illustrate the performance degradation due to uncertainty in $D$.   
 
@@ -216,22 +219,24 @@ The optimal reproduction set $\mathcal{Y}$ is therefore given by
 \begin{align}\label{eq:opt_y}
 	\min_{\mathbf{y}_1,\mathbf{y}_2 \in \mathbb{R}^d} \int_0^{\infty} h\left(\mathbb{P}\left(\min_{\hat{\mathbf{x}} \in \{\mathbf{y}_1,\mathbf{y}_2\}} D_{\mathrm{ref}}(\mathbf{X},\hat{\mathbf{x}}) > u\right)\right)\mathrm{d}u. 
 \end{align}
-Unlike for mean distortion criteria, a solution to (\ref{eq:opt_y}) cannot be obtained via a Lloyd-type algorithm \cite{Linde1980algorithm} due to the non-linearity introduced by $h$. To obtain a solution we exploit a global optimization method. In particular, we utilize the cross-entropy method with a Gaussian search XX \cite{Botev2013cross}. Pseudocode for the algorithm\footnote{Code to implement the algorithm along with parameters for the cross-entropy method are available at \url{https://github.com/malcolmalexegan/risk_averse_quantization}.} is given in Alg.~\ref{alg:optimization}.
+Unlike for mean distortion criteria, a solution to (\ref{eq:opt_y}) cannot be obtained via a Lloyd-type algorithm \cite{Linde1980algorithm} due to the non-linearity introduced by $h$. To obtain a solution we exploit a global optimization method. In particular, we utilize the cross-entropy method with a Gaussian sampling \cite{Botev2013cross}. Pseudocode for the algorithm\footnote{Code to implement the algorithm along with parameters for the cross-entropy method are available at \url{https://github.com/malcolmalexegan/risk_averse_quantization/tree/master}.} is given in Alg.~\ref{alg:optimization}.
 
 \begin{algorithm}
 	\caption{Quantizer Optimization Algorithm}\label{alg:optimization}
 	\begin{algorithmic}[1]
 		\STATE \textbf{Input:} Maximum number of iterations $T_{\max}$, samples  $\{\mathbf{x}_i\}_{i=1}^S$ from $P_{\mathbf{X}}$, samples for CEM $N$, reference distortion function $D_{\mathrm{ref}}$, risk measure parameter function $h$ in (\ref{eq:risk_criterion}), initial search parameters $\boldsymbol{\mu} \in \mathbb{R}^2$, $\sigma \in \mathbb{R}_+$. \STATE Initialize $t = 0$, $\mathcal{Y}_{\mathrm{best}}$, and $\rho_{\mathrm{best}} = \infty$. 
 		\FOR{$t < T_{\max}$}
-		\STATE $t \leftarrow t+1$
+		\STATE $t \leftarrow t+1$.
 		\STATE Sample quantizers $\mathcal{Y}_i \sim \mathcal{N}(\boldsymbol{\mu},\sigma^2\mathbf{I}),~i = 1,\ldots,N$.
 		\STATE Estimate risk measure $\rho_i$ in (\ref{eq:risk_criterion}) from data $\{\mathbf{x}_i\}_{i=1}^S$ for each $\mathcal{Y}_i,~i = 1,\ldots,N$.
+		\FOR {$i = 1,\ldots,N$}
 		\IF{$\rho_i < \rho_{best}$}
 		\STATE $\rho_{\mathrm{best}} \leftarrow \rho_i$, $\mathcal{Y}_{\mathrm{best}} \leftarrow Y_i$.
 		\ENDIF
 		\STATE Update $\boldsymbol{\mu},\sigma$ via \cite[Algorithm 4.1 Eq. (19-21)]{Botev2013cross}.
 		\ENDFOR
-		\STATE \textbf{Output:} $Y^*$
+		\ENDFOR
+		\STATE \textbf{Output:} $\mathcal{Y}_{\mathrm{best}}$.
 	\end{algorithmic}
 \end{algorithm}
 
@@ -243,11 +248,13 @@ We investigate our $1$-bit quantization strategy using temperature data from the
 \begin{align}\label{eq:risk_power}
 	\rho_{\alpha} = \int_0^{\infty} \left(\mathbb{P}(D_{\mathrm{SE}}(X,\hat{X}) > u)\right)^{\alpha}\mathrm{d}u,~\alpha \in (0,1].
 \end{align} 
-When $\alpha = 1$, $\rho = \mathbb{E}[D_{\mathrm{SE}}(X,\hat{X})]$, while for small values of $\alpha$, the quantizer attempts to reduce the distortion for lower probability events. This has the byproduct of reducing quantization errors for extreme temperature events. Table~\ref{table:Twin_house} presents the optimized quantizer using Alg.~\ref{alg:optimization}, threshold, and corresponding values of risk measures with varying $\alpha$. Here, $\rho_{\alpha}$ denotes the value of the risk measure in (\ref{eq:risk_power}) with parameter $\alpha$. Fig.~\ref{fig:time_series} shows the temperature time series and corresponding quantized data obtained from the optimized quantizer with $\alpha = 0.1$.  
+When $\alpha = 1$, $\rho = \mathbb{E}[D_{\mathrm{SE}}(X,\hat{X})]$, while for small values of $\alpha$, the quantizer attempts to reduce the distortion for lower probability events. This has the byproduct of reducing quantization errors for extreme temperature events. Fig.~\ref{fig:time_series} shows the temperature time series and corresponding quantized data obtained from the optimized quantizer with $\alpha = 0.1$.
+
+Table~\ref{table:Twin_house} shows the optimized quantizer using Alg.~\ref{alg:optimization}, threshold, and corresponding values of risk measures with varying $\alpha$. Here, $\rho_{\alpha}$ denotes the value of the risk measure in (\ref{eq:risk_power}) with parameter $\alpha$. Observe that quantization levels $y_1,y_2$ in $\mathcal{Y}$ for optimized quantizer increase as $\alpha$ decreases. In other words, increasing the cost associated with low probability events associated with extreme events leads to quantization levels that approach the values of the extreme events.  
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{time_series.png}%{traces.eps}
+	\includegraphics[width=\linewidth]{time_series_FIN.png}%{traces.eps}
 	\caption{Temperature time series from the Twin House Experiment \cite{Kersken2020} (sensor in the living room at a height of 10cm) and corresponding quantization based on $\rho_{0.1}$, corresponding to $\alpha = 0.1$ in (\ref{eq:risk_power}).}
 	\label{fig:time_series}
 \end{figure}
@@ -271,7 +278,7 @@ When $\alpha = 1$, $\rho = \mathbb{E}[D_{\mathrm{SE}}(X,\hat{X})]$, while for sm
 
 \section{Conclusion}
 
-Goal-oriented compression relies on knowledge of an application-dependent distortion function. In practice, there may be uncertainty in the choice of this distortion function. In this paper, we have proposed an approach exploiting risk measures to cope with uncertainty in the distortion function. To optimize the quantizer based on risk measure criteria, we apply the cross-entropy method. Our approach is illustrated for environmental monitoring data from the Twin House Experiment \cite{Kersken2020}.
+Goal-oriented compression relies on knowledge of an application-dependent distortion function. In practice, there may be uncertainty in the choice of this distortion function. In this paper, we have proposed a new approach to robust quantization to cope with both uncertainty in the data distribution and the distortion function. We establish a connection between robust quantization and risk measures, which leads to new criteria. To optimize the quantizer based on risk measure criteria, we apply the cross-entropy method. Our approach is illustrated for environmental monitoring data from the Twin House Experiment \cite{Kersken2020}.
 
 
 \bibliographystyle{IEEEtran}
